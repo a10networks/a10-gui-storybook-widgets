@@ -1,0 +1,13 @@
+import { A10Tabs, A10Icon } from 'a10-gui-widgets';
+const TabPane = A10Tabs.TabPane;
+
+ReactDOM.render(
+  <A10Tabs defaultActiveKey="2">
+    <TabPane tab={<span><A10Icon type="apple" />Tab 1</span>} key="1">
+      Tab 1
+    </TabPane>
+    <TabPane tab={<span><A10Icon type="android" />Tab 2</span>} key="2">
+      Tab 2
+    </TabPane>
+  </A10Tabs>
+, mountNode);

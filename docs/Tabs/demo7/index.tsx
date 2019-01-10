@@ -1,0 +1,51 @@
+import * as React from 'react'
+import { A10Tabs, A10Select } from '../../../src/'
+import { CodeComponent, CodeCard, Code } from '../../utils'
+const demoCode = require('./code.txt')
+const TabPane = A10Tabs.TabPane
+const Option = A10Select.Option
+
+class Demo extends React.Component {
+  state = {
+    tabPosition: 'top',
+  }
+  changeTabPosition = tabPosition => {
+    this.setState({ tabPosition })
+  }
+  render() {
+    return (
+      <CodeCard
+        title="Position"
+        desc="Tab's position: left, right, top or bottom."
+        code={<Code string={demoCode} />}
+      >
+        <div style={{ marginBottom: 16 }}>
+          Tab position：
+          <A10Select
+            value={this.state.tabPosition}
+            onChange={this.changeTabPosition}
+            dropdownMatchSelectWidth={false}
+          >
+            <Option value="top">top</Option>
+            <Option value="bottom">bottom</Option>
+            <Option value="left">left</Option>
+            <Option value="right">right</Option>
+          </A10Select>
+        </div>
+        <A10Tabs tabPosition={this.state.tabPosition}>
+          <TabPane tab="Tab 1" key="1">
+            Content of Tab 1
+          </TabPane>
+          <TabPane tab="Tab 2" key="2">
+            Content of Tab 2
+          </TabPane>
+          <TabPane tab="Tab 3" key="3">
+            Content of Tab 3
+          </TabPane>
+        </A10Tabs>
+      </CodeCard>
+    )
+  }
+}
+
+export default Demo

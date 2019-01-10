@@ -1,0 +1,68 @@
+import { A10Layout, A10Menu, A10Breadcrumb, A10Icon } from 'a10-gui-widgets';
+const { SubMenu } = A10Menu;
+const { Header, Content, Sider } = A10Layout;
+
+ReactDOM.render(
+  <A10Layout>
+    <Header className="header">
+      <div className="logo" />
+      <A10Menu
+        theme="light"
+        mode="horizontal"
+        defaultSelectedKeys={['2']}
+        style={{ lineHeight: '64px' }}
+      >
+        <A10Menu.Item key="1">nav 1</A10Menu.Item>
+        <A10Menu.Item key="2">nav 2</A10Menu.Item>
+        <A10Menu.Item key="3">nav 3</A10Menu.Item>
+      </A10Menu>
+    </Header>
+    <A10Layout>
+      <Sider width={200} style={{ background: '#fff' }}>
+        <A10Menu
+          mode="inline"
+          defaultSelectedKeys={['1']}
+          defaultOpenKeys={['sub1']}
+          style={{ height: '100%', borderRight: 0 }}
+        >
+          <SubMenu key="sub1" title={<span><A10Icon type="user" />subnav 1</span>}>
+            <A10Menu.Item key="1">option1</A10Menu.Item>
+            <A10Menu.Item key="2">option2</A10Menu.Item>
+            <A10Menu.Item key="3">option3</A10Menu.Item>
+            <A10Menu.Item key="4">option4</A10Menu.Item>
+          </SubMenu>
+          <SubMenu key="sub2" title={<span><A10Icon type="laptop" />subnav 2</span>}>
+            <A10Menu.Item key="5">option5</A10Menu.Item>
+            <A10Menu.Item key="6">option6</A10Menu.Item>
+            <A10Menu.Item key="7">option7</A10Menu.Item>
+            <A10Menu.Item key="8">option8</A10Menu.Item>
+          </SubMenu>
+          <SubMenu key="sub3" title={<span><A10Icon type="notification" />subnav 3</span>}>
+            <A10Menu.Item key="9">option9</A10Menu.Item>
+            <A10Menu.Item key="10">option10</A10Menu.Item>
+            <A10Menu.Item key="11">option11</A10Menu.Item>
+            <A10Menu.Item key="12">option12</A10Menu.Item>
+          </SubMenu>
+        </A10Menu>
+      </Sider>
+      <A10Layout style={{ padding: '0 24px 24px' }}>
+        <A10Breadcrumb style={{ margin: '16px 0' }}>
+          <A10Breadcrumb.Item>Home</A10Breadcrumb.Item>
+          <A10Breadcrumb.Item>List</A10Breadcrumb.Item>
+          <A10Breadcrumb.Item>App</A10Breadcrumb.Item>
+        </A10Breadcrumb>
+        <Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 280 }}>
+          Content
+        </Content>
+      </A10Layout>
+    </A10Layout>
+  </A10Layout>
+, mountNode);
+
+#components-layout-demo-top-side-2 .logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255,255,255,.2);  
+  margin: 16px 28px 16px 0;
+  float: left;
+}
