@@ -1,3 +1,4 @@
+
 export const topNagivationCode = `import * as React from 'react'
 import { A10Menu, A10Icon } from 'a10-gui-widgets';
 const SubMenu = A10Menu.SubMenu;
@@ -44,7 +45,7 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, mountNode);`;
+ReactDOM.render(<App />, mountNode);`
 
 export const inlinemenu = `
 import { A10Menu, A10Icon } from 'a10-gui-widgets';
@@ -96,7 +97,7 @@ class Sider extends React.Component {
 }
 
 ReactDOM.render(<Sider />, mountNode);
-`;
+`
 
 export const collapsedInlineMenu = `
 import { A10Menu, A10Icon, A10Button } from 'a10-gui-widgets';
@@ -161,7 +162,7 @@ class App extends React.Component {
 
 ReactDOM.render(<App />, mountNode);
 
-`;
+`
 export const openCurrentSubmenuOnly = `
 import { A10Menu, A10Icon } from 'a10-gui-widgets';
 
@@ -220,7 +221,7 @@ class Sider extends React.Component {
 }
 
 ReactDOM.render(<Sider />, mountNode);
-`;
+`
 
 export const verticalMenu = `
 import { A10Menu, A10Icon } from 'a10-gui-widgets';
@@ -239,7 +240,7 @@ ReactDOM.render(
         <A10Menu.Item key="1">Option 1</A10Menu.Item>
         <A10Menu.Item key="2">Option 2</A10Menu.Item>
       </MenuItemGroup>
-      <MenuItemGroup title="Item 2">
+      <MenuItemGroup title="Iteom 2">
         <A10Menu.Item key="3">Option 3</A10Menu.Item>
         <A10Menu.Item key="4">Option 4</A10Menu.Item>
       </MenuItemGroup>
@@ -258,10 +259,10 @@ ReactDOM.render(
       <A10Menu.Item key="11">Option 11</A10Menu.Item>
       <A10Menu.Item key="12">Option 12</A10Menu.Item>
     </SubMenu>
-  </A10Menu>,
+  </MA10Menuenu>,
   mountNode
 );
-`;
+`
 
 export const menuThemes = `
 import { A10Menu, A10Icon ,A10Switch} from 'a10-gui-widgets';
@@ -333,7 +334,7 @@ class Sider extends React.Component {
 }
 
 ReactDOM.render(<Sider />, mountNode);
-`;
+`
 
 export const switchTheMenuType = `
 import { A10Menu, A10Icon ,A10Switch} from 'a10-gui-widgets';
@@ -402,4 +403,4 @@ class Sider extends React.Component {
 }
 
 ReactDOM.render(<Sider />, mountNode);
-`;
+`

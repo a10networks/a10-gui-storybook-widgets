@@ -114,6 +114,18 @@ const Example = () => {
     </fieldset>
   )
 
+  const wafIcons = (
+    <fieldset>
+      <legend>WAF icons</legend>
+      <div style={styles}>{'<A10Icon app="waf" type="app-service" />'}</div>
+      <RenderIcons app="waf" icons={iconList.waf} />
+      <div style={styles}>
+        {'<A10Icon app="waf" type="app-service" islight={true} />'}
+      </div>
+      <RenderIconsLight app="waf" icons={iconList.waf} />
+    </fieldset>
+  )
+
   const flagIcons = (
     <fieldset>
       <legend>Flag Circle icons</legend>
@@ -126,6 +138,8 @@ const Example = () => {
       {harmonyControllerIcons}
       <br />
       {giFirewallIcons}
+      <br />
+      {wafIcons}
       <br />
       {thunderAdcIcons}
       <br />

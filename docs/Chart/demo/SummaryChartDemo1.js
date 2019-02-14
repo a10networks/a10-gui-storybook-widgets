@@ -91,6 +91,7 @@ class Example extends React.Component {
     return (
       <A10Chart.Summary
         title="FILES STATUS"
+        description="FILES STATUS"
         // counters={this.state.counters}
         chartConfig={this.state.chartConfig}
         hideLegend={true}

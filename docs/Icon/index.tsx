@@ -1,4 +1,3 @@
-
 import * as React from 'react'
 import { withReadme } from 'storybook-readme'
 import { storiesOf } from '@storybook/react'
@@ -19,20 +18,41 @@ const Example = () => (
     <CodeCard
       title="Icon"
       desc=""
-      code={<Code string={"<A10Icon type=\"link\" title=\"link\" style={{ fontSize: '40px', width: '20px' }}/>"} />}
+      code={
+        <Code
+          string={
+            '<A10Icon type="link" title="link" style={{ fontSize: \'40px\', width: \'20px\' }}/>'
+          }
+        />
+      }
     >
       <div className="IconDemoSpecific">
-        <A10Icon type="link" title="link" style={{ fontSize: '40px', width: '20px' }} />
+        <A10Icon
+          type="link"
+          title="link"
+          style={{ fontSize: '40px', width: '20px' }}
+        />
       </div>
     </CodeCard>
 
     <CodeCard
       title="Spin Icon"
       desc=" "
-      code={<Code string={"<A10Icon type=\"link\" title=\"link\" spin={ true } style={{ fontSize: '40px', width: '20px' }}/>"} />}
+      code={
+        <Code
+          string={
+            '<A10Icon type="link" title="link" spin={ true } style={{ fontSize: \'40px\', width: \'20px\' }}/>'
+          }
+        />
+      }
     >
       <div className="IconDemoSpecific">
-        <A10Icon type="link" title="link" spin={true} style={{ fontSize: '40px', width: '20px' }} />
+        <A10Icon
+          type="link"
+          title="link"
+          spin={true}
+          style={{ fontSize: '40px', width: '20px' }}
+        />
       </div>
     </CodeCard>
     <CodeCard
@@ -44,10 +64,26 @@ const Example = () => (
     </CodeCard>
 
     <CodeCard
-      title="App Icon"
+      title="Font Awesome Icon"
       desc=""
-      code={''}
+      code={
+        <Code
+          string={
+            '<A10Icon type="trash" style={{ color: "red" }} category="font-awesome" />'
+          }
+        />
+      }
     >
+      <div className="IconDemoSpecific">
+        <A10Icon
+          type="trash"
+          style={{ color: 'red' }}
+          category="font-awesome"
+        />
+      </div>
+    </CodeCard>
+
+    <CodeCard title="App Icon" desc="" code={''}>
       <AppIconDemo />
     </CodeCard>
     <CodeCard
@@ -71,7 +107,7 @@ const Example = () => (
     >
       <Demo2 />
     </CodeCard>
-  </CodeComponent >
+  </CodeComponent>
 )
 
 /* <Content style={{ paddingBottom: '16px' }}>

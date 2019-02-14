@@ -104,6 +104,7 @@ export default class Example extends React.Component {
           groups={groups}
           onClickMenu={onClickMenu}
           title="SSL INSPECTION STATUS"
+          description="SSL INSPECTION STATUS"
           maxFilterNumber={3}
           chartConfig={this.state.config}
           counters={this.state.counters}

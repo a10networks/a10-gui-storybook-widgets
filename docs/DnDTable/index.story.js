@@ -5,7 +5,6 @@ import { CodeComponent, CodeCard, Code } from '../utils'
 import { basicExample } from './code'
 import * as readme from '../../src/DnD/Table/README.md'
 import { A10DnDTable } from '../../src'
-console.log(A10DnDTable)
 
 import './style.less'
 

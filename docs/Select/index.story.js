@@ -19,6 +19,7 @@ import {
   automaticTokenizationCode, customDropdownCode
 } from './demo/code'
 
+import './demo/index.less'
 import { withReadme } from 'storybook-readme'
 const readme = require('../../src/Select/README.md')
 

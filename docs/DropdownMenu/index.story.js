@@ -24,7 +24,7 @@ const Example = () => {
 }
 ReactDOM.render(<Example />, mountNode);`
 
-const Example = () => {
+export const Example = () => {
   const menu = [
     <div name="duplicate">Duplicate</div>,
     <div name="add">Add</div>,
@@ -34,18 +34,38 @@ const Example = () => {
   const onClick = (Component, index) => {
     console.log(Component, index)
   }
-  return <A10DropdownMenu trigger="hover" placement="topRight" arrowPointAtCenter={true} title="Click here to see menu" menu={menu} onClick={onClick} />
+  return (
+    <A10DropdownMenu
+      trigger="hover"
+      placement="topRight"
+      arrowPointAtCenter={true}
+      title="Click here to see menu"
+      menu={menu}
+      onClick={onClick}
+    />
+  )
 }
 
 export default story => {
-  story.add('A10DropdownMenu', withReadme(readme, () => {
-    const Component = () => <div>Test <Icon type="pie-chart" /></div>
-    return (
-      <CodeComponent>
-        <CodeCard title="Basic Usage" desc="Basic Usage Example. Create a list of div's like in the code example below to easily create your dropdown menu." code={<Code string={code} />}>
-          <Example />
-        </CodeCard>
-      </CodeComponent>
-    )
-  }))
+  story.add(
+    'A10DropdownMenu',
+    withReadme(readme, () => {
+      const Component = () => (
+        <div>
+          Test <Icon type="pie-chart" />
+        </div>
+      )
+      return (
+        <CodeComponent>
+          <CodeCard
+            title="Basic Usage"
+            desc="Basic Usage Example. Create a list of div's like in the code example below to easily create your dropdown menu."
+            code={<Code string={code} />}
+          >
+            <Example />
+          </CodeCard>
+        </CodeComponent>
+      )
+    }),
+  )
 }

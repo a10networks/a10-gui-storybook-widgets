@@ -71,7 +71,16 @@ const settingsContent = <div>
 const defaultData = {
   'map': {
       type: 'map',
-      config: {},
+      config: {
+          series: [{
+            name: 'Geo-Locations',
+            data: [
+                { code: 'us', value: 100 },
+                { code: 'in', value: 200 },
+                { code: 'cn', value: 300 },
+            ]
+          }]
+      },
       counters: {},
   },
 
@@ -86,10 +95,8 @@ class Example extends React.Component {
   constructor() {
       super()
       this.state = {
-          type: 'map',
           disableFilter: true,
-          config: {},
-          counters: {},
+          ...defaultData.map,
       }
   }
 

@@ -12,6 +12,7 @@ import UnderControlDemo from './demo/UnderControl'
 import DisabledDemo from './demo/Disabled'
 import IntervalDemo from './demo/IntervalDemo'
 import TwelveDemo from './demo/TwelveDemo'
+import './demo/index.less'
 import { demoString, threeString, hourMinString, addonString, underString, disabledString, intervalString, twelveString } from './demo/code'
 const Example = () => {
   return (

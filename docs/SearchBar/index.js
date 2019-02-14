@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react'
 import { Code, CodeComponent, CodeCard } from '../utils'
 import { A10SearchBar, A10Icon } from '../../src'
 import * as readme from '../../src/SearchBar/README.md'
-
+import './styles/index.less'
 // export default (story) => {
 //   story.addDecorator(withReadme(readme))
 //   .add('A10SearchBar', () => {
@@ -51,7 +51,9 @@ const Example = () => {
         desc="Enter Button Usage Example"
         code={<Code string={searchBarEnterButtonCode} />}
       >
-        <A10SearchBar enterButton={true} />
+        <div id="SearchBarEnterSpecific">
+          <A10SearchBar enterButton={true} />
+        </div>
       </CodeCard>
     </CodeComponent>
   )

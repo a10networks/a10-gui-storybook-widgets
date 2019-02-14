@@ -12,7 +12,7 @@ import Disabled from './demo/Disabled'
 import Decimals from './demo/Decimals'
 import { basicUsageCode, formatterUsageCode, sizetest, disabled, decimals } from './demo/code'
 import { demo2Code } from '../Input/demo/code';
-
+import './demo/index.less'
 const readme = require('../../src/InputNumber/README.md')
 
 const Example = () => (

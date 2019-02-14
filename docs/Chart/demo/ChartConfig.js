@@ -113,7 +113,7 @@ export const columnConfig = {
 }
 
 export const columnConfigCounter = {
-    total: 44,
+    total: 130,
     filters: {
         'John': 55,
         'Jane': 42,
@@ -196,7 +196,7 @@ export const groupColumnConfig = {
 }
 
 export const groupColumnCounter = {
-    total: 80,
+    total: 39,
     filters: {
         'John': 21,
         'Joe': 18,
@@ -245,7 +245,7 @@ export const pieConfig = {
 }
 
 export const pieConfigCounter = {
-    total: 98,
+    total: 96.44,
     filters: {
         'IE': 56.33,
         'Chrome': 24.03,

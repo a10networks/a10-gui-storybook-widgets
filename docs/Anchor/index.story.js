@@ -36,7 +36,6 @@ const Example = () => {
       >
         <CustomizeOnClickDemo />
       </CodeCard>
-
     </CodeComponent>
   )
 }

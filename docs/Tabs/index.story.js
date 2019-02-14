@@ -1,4 +1,3 @@
-
 import * as React from 'react'
 
 import { Code, CodeComponent, CodeCard } from '../utils'
@@ -7,16 +6,22 @@ import { A10Tabs } from '../../src'
 import { withReadme } from 'storybook-readme'
 const readme = require('../../src/Tabs/README.md')
 
-const BasicDemo = () => {
+export const BasicDemo = () => {
   function callback(key) {
-    console.log(key);
+    console.log(key)
   }
 
   return (
     <A10Tabs defaultActiveKey="1" onChange={callback}>
-      <A10Tabs.TabPane tab="Tab 1" key="1">Content of Tab Pane 1</A10Tabs.TabPane>
-      <A10Tabs.TabPane tab="Tab 2" key="2">Content of Tab Pane 2</A10Tabs.TabPane>
-      <A10Tabs.TabPane tab="Tab 3" key="3">Content of Tab Pane 3</A10Tabs.TabPane>
+      <A10Tabs.TabPane tab="Tab 1" key="1">
+        Content of Tab Pane 1
+      </A10Tabs.TabPane>
+      <A10Tabs.TabPane tab="Tab 2" key="2">
+        Content of Tab Pane 2
+      </A10Tabs.TabPane>
+      <A10Tabs.TabPane tab="Tab 3" key="3">
+        Content of Tab Pane 3
+      </A10Tabs.TabPane>
     </A10Tabs>
   )
 }
@@ -24,9 +29,15 @@ const BasicDemo = () => {
 const DisableTabsDemo = () => {
   return (
     <A10Tabs defaultActiveKey="1">
-      <A10Tabs.TabPane tab="Tab 1" key="1">Tab 1</A10Tabs.TabPane>
-      <A10Tabs.TabPane tab="Tab 2" disabled key="2">Tab 2</A10Tabs.TabPane>
-      <A10Tabs.TabPane tab="Tab 3" key="3">Tab 3</A10Tabs.TabPane>
+      <A10Tabs.TabPane tab="Tab 1" key="1">
+        Tab 1
+      </A10Tabs.TabPane>
+      <A10Tabs.TabPane tab="Tab 2" disabled key="2">
+        Tab 2
+      </A10Tabs.TabPane>
+      <A10Tabs.TabPane tab="Tab 3" key="3">
+        Tab 3
+      </A10Tabs.TabPane>
     </A10Tabs>
   )
 }
