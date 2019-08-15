@@ -17,8 +17,17 @@ import DisabledOrReadOnlyDemo from './demo/DisabledOrReadOnly'
 import SuggestionContainerDemo from './demo/SuggestionContainer'
 import CustomizeTriggerTokenDemo from './demo/CustomizeTriggerToken'
 import {
-  basicDemoCode, placementCode, iconImageCode, asynchronous,
-  customizeSuggestion, controlled, withForm, multiLines, disabledOrReadOnly, suggestionContainer, customizeTriggerToken
+  basicDemoCode,
+  placementCode,
+  iconImageCode,
+  asynchronous,
+  customizeSuggestion,
+  controlled,
+  withForm,
+  multiLines,
+  disabledOrReadOnly,
+  suggestionContainer,
+  customizeTriggerToken,
 } from './demo/code'
 const Example = () => {
   return (
@@ -96,13 +105,13 @@ const Example = () => {
       </CodeCard>
       <CodeCard
         title="Customize Trigger Token"
-        desc={'Customize Trigger Token by prefix props. Default to @, Array<string> also supported.'}
+        desc={
+          'Customize Trigger Token by prefix props. Default to @, Array<string> also supported.'
+        }
         code={<Code string={customizeTriggerToken} />}
       >
         <CustomizeTriggerTokenDemo />
       </CodeCard>
-
-
     </CodeComponent>
   )
 }
@@ -110,4 +119,3 @@ const Example = () => {
 export default story => {
   story.add('A10Mention', withReadme(A10MentionReadme, Example))
 }
-

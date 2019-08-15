@@ -315,7 +315,9 @@ class Example extends React.Component {
 }
 ReactDOM.render(<Example />, mountNode);`
 
-export const controlChartDemoCode = `import { A10Chart, A10Button, A10Table } from 'a10-gui-widgets'
+export const controlChartDemoCode = `
+import { A10Chart, A10Button } from 'a10-gui-widgets'
+import TableContent from './TableContent'
 
 import {
   areaConfig,
@@ -324,130 +326,71 @@ import {
   pieConfigCounter,
   columnConfig,
   columnConfigCounter,
+  groupColumnConfig,
+  groupColumnCounter,
   scatterConfig,
   scatterConfigCounter,
 } from './ChartConfig'
 
-const TableContent = () => {
-  const columns = [
-    {
-      title: 'Name',
-      dataIndex: 'name',
-      render: text => <a href="#">{text}</a>,
-    },
-    {
-      title: 'Age',
-      dataIndex: 'age',
-    },
-    {
-      title: 'Address',
-      dataIndex: 'address',
-    },
-  ]
-  const data = [
-    {
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
-    },
-    {
-      key: '2',
-      name: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park',
-    },
-    {
-      key: '3',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-    },
-    {
-      key: '4',
-      name: 'Disabled User',
-      age: 99,
-      address: 'Sidney No. 1 Lake Park',
-    },
-  ]
-
-  // rowSelection object indicates the need for row selection
-  const rowSelection = {
-    onChange: (selectedRowKeys, selectedRows) => {
-      console.log(
-        ${'`selectedRowKeys: ${selectedRowKeys}`'},
-        'selectedRows: ',
-        selectedRows,
-      )
-    },
-    getCheckboxProps: record => ({
-      disabled: record.name === 'Disabled User', // Column configuration not to be checked
-    }),
-  }
-  return (
-    <A10Table
-      style={{ padding: 20 }}
-      rowSelection={rowSelection}
-      columns={columns}
-      dataSource={data}
-    />
-  )
-}
-
 const groups = [
-    [
-        {name: 'HTTP', actived: true},
-        {name: 'HTTPS'},
-        {name: 'FTP'},
-        {name: 'SFTP'},
-    ],
-    [
-        {name: 'UPLOAD', actived: true},
-        {name: 'DOWNLOAD'},
-    ]
+  [
+    { name: 'HTTP', actived: true },
+    { name: 'HTTPS' },
+    { name: 'FTP' },
+    { name: 'SFTP' },
+  ],
+  [{ name: 'UPLOAD', actived: true }, { name: 'DOWNLOAD' }],
 ]
 
-const settingsContent = <div>
+const settingsContent = (
+  <div>
     <p>Add to Dashboard</p>
     <p>Options</p>
-</div>
-const defaultData = {
-    'scatter': {
-        type: 'scatter',
-        config: scatterConfig,
-        counters: scatterConfigCounter
-    },
-    area: {
-        type: 'area',
-        config: areaConfig,
-        counters: areaConfigCounter
-    },
-    column: {
-        type: 'column',
-        config: columnConfig,
-        counters: columnConfigCounter
-    },
-    pie: {
-        type: 'pie',
-        config: pieConfig,
-        counters: pieConfigCounter
-    },
-    detail: {
-        type: 'detail',
-        config: <TableContent />
-    }
-}
-export default class Example extends React.Component {
+  </div>
+)
 
+const defaultData = {
+  scatter: {
+    type: 'scatter',
+    config: scatterConfig,
+    counters: scatterConfigCounter,
+  },
+  area: {
+    type: 'area',
+    config: areaConfig,
+    counters: areaConfigCounter,
+  },
+  column: {
+    type: 'column',
+    config: columnConfig,
+    counters: columnConfigCounter,
+  },
+  groupColumn: {
+    type: 'groupColumn',
+    config: groupColumnConfig,
+    counters: groupColumnCounter,
+  },
+  pie: {
+    type: 'pie',
+    config: pieConfig,
+    counters: pieConfigCounter,
+  },
+  detail: {
+    type: 'detail',
+    config: <TableContent />,
+  },
+}
+
+class Example extends React.Component {
   constructor() {
-      super()
-      this.state = {
-          type: 'scatter',
-          disableFilter: false,
-          config: scatterConfig,
-          counters: scatterConfigCounter,
-          groups: groups,
-      }
+    super()
+    this.state = {
+      type: 'scatter',
+      disableFilter: false,
+      config: scatterConfig,
+      counters: scatterConfigCounter,
+      groups: ['HTTP', 'UPLOAD'],
+    }
   }
 
   render() {
@@ -455,31 +398,46 @@ export default class Example extends React.Component {
       this.setState({ disableFilter: !this.state.disableFilter })
     }
 
-    const onClickMenu = (options) => {
-        const type = options.type
-        this.setState(defaultData[type])
-        if (this.state.groups.length === options.groups.length) {
-            this.state.groups.map((group, index) => {
-                group.map((tab) => {
-                    tab.actived = tab.name === options.groups[index]
-                })
-            })
-        }
+    const onClickMenu = options => {
+      const type = options.type
+      this.setState(defaultData[type])
+      if (this.state.groups.length === options.groups.length) {
+        this.state.groups.map((group, index) => {
+          groups[index].map(tab => {
+            tab.actived = tab.name === options.groups[index]
+          })
+        })
+      }
     }
 
     return (
-      <div>
+      <div style={{ width: '100%' }}>
         <A10Chart.Detail
-            types={['scatter', 'area', 'column', 'pie', 'detail']}
-            settings={settingsContent}
-            groups={groups}
-            onClickMenu={onClickMenu}
-            title="SSL INSPECTION STATUS"
-            maxFilterNumber={3}
-            chartConfig={this.state.config}
-            counters={this.state.counters}
-            type={this.state.type}
-            disableFilter={this.state.disableFilter}
+          types={[
+            'scatter',
+            'area',
+            'groupColumn',
+            'column',
+            'pie',
+            'detail',
+            'semi_donut',
+            'donut',
+            'treemap',
+          ]}
+          settings={settingsContent}
+          groups={groups}
+          onClickMenu={onClickMenu}
+          title="SSL INSPECTION STATUS"
+          description="SSL INSPECTION STATUS"
+          maxFilterNumber={3}
+          chartConfig={this.state.config}
+          counters={this.state.counters}
+          type={this.state.type}
+          disableFilter={this.state.disableFilter}
+          showTitle={true}
+          showSettingIcon={false}
+          showChartIcons={false}
+          showChartHeaderMenu={true}
         />
 
         <div style={{ marginTop: '10px' }}>
@@ -492,8 +450,8 @@ export default class Example extends React.Component {
   }
 }
 
-ReactDOM.render(<Example />, mountNode);`
-
+ReactDOM.render(<Example />, mountNode);
+`
 
 export const simpleUsageChartCode = `import { A10Chart, A10Button } from 'a10-gui-widgets'
 import TableContent from './TableContent'
@@ -683,3 +641,45 @@ export default class Example extends React.Component {
 }
 
 ReactDOM.render(<Example />, mountNode);`
+
+export const A10ChartPieCode = `import * as React from 'react'
+import { A10Component } from 'a10-gui-framework'
+import { A10Chart } from '../../../src'
+
+export default class PieDemo extends A10Component {
+  render() {
+    const additionalConfig = {
+      series: [
+        {
+          type: 'pie',
+          innerSize: '50%',
+          data: [
+            { name: 'USA', y: 300, color: '#4db6ac' },
+            { name: 'Taiwan', y: 30, color: '#ef9a9a' },
+            { name: 'China', y: 60, color: '#ffb74d' },
+            { name: 'India', y: 60, color: '#ba68c8' },
+            {
+              name: 'Beijing',
+              y: 10,
+              color: '#7986cb',
+            },
+            {
+              name: 'Japan',
+              y: 25,
+              color: '#a1887f',
+            },
+          ],
+        },
+      ],
+    }
+    const filterConfig = {
+      enableFilters: true,
+      alignment: 'center',
+      showFilterByCaption: false,
+    }
+    return (
+      <A10Chart.Pie config={additionalConfig} filterConfig={filterConfig} />
+    )
+  }
+}
+`

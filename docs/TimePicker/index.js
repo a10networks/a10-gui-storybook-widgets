@@ -13,28 +13,46 @@ import DisabledDemo from './demo/Disabled'
 import IntervalDemo from './demo/IntervalDemo'
 import TwelveDemo from './demo/TwelveDemo'
 import './demo/index.less'
-import { demoString, threeString, hourMinString, addonString, underString, disabledString, intervalString, twelveString } from './demo/code'
+import {
+  demoString,
+  threeString,
+  hourMinString,
+  addonString,
+  underString,
+  disabledString,
+  intervalString,
+  twelveString,
+} from './demo/code'
 const Example = () => {
   return (
     <CodeComponent>
       <Card title="Basic Usage">
         <BasicUsageDemo />
         <Divider />
-        <p>Click TimePicker, and then we could select or input a time in panel.<strong>value</strong> and onChange should be used together</p>
+        <p>
+          Click TimePicker, and then we could select or input a time in panel.
+          <strong>value</strong> and onChange should be used together
+        </p>
         <Code string={demoString} />
       </Card>
 
       <Card title="Three Sizes ">
         <ThreeDemo />
         <Divider />
-        <p>The input box comes in three sizes. large is used in the form, while the medium size is the default.</p>
+        <p>
+          The input box comes in three sizes. large is used in the form, while
+          the medium size is the default.
+        </p>
         <Code string={threeString} />
       </Card>
 
       <Card title="Hour and minute">
         <HourMinDemo />
         <Divider />
-        <p>While part of format is omitted, the corresponding column in panel will disappear, too.</p>
+        <p>
+          While part of format is omitted, the corresponding column in panel
+          will disappear, too.
+        </p>
         <Code string={hourMinString} />
       </Card>
 
@@ -72,7 +90,6 @@ const Example = () => {
         <p>TimePicker of 12 hours format, with default format h:mm:ss a.</p>
         <Code string={twelveString} />
       </Card>
-
     </CodeComponent>
   )
 }
@@ -80,4 +97,3 @@ const Example = () => {
 export default story => {
   story.add('A10TimePicker', withReadme(A10TimePickerReadme, Example))
 }
-

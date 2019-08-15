@@ -20,7 +20,11 @@ const RenderIcons = props => {
           {icons.map((name, index) => {
             return (
               <div style={styles} key={`${name}-${index}`}>
-                <A10Icon app={app} type={name} />
+                <A10Icon
+                  app={app}
+                  type={name}
+                  style={{ fontSize: 25, stroke: 'red' }}
+                />
                 <div>{name}</div>
               </div>
             )
@@ -133,6 +137,14 @@ const Example = () => {
       <RenderIcons app="flag-circle" icons={iconList.flag} />
     </fieldset>
   )
+
+  const filterIcons = (
+    <fieldset>
+      <legend>Filter icons</legend>
+      <div style={styles}>{'<A10Icon app="filters" type="app-service" />'}</div>
+      <RenderIcons app="filters" icons={iconList.filter} />
+    </fieldset>
+  )
   return (
     <div style={{ margin: '30px' }}>
       {harmonyControllerIcons}
@@ -146,6 +158,8 @@ const Example = () => {
       {normalIcons}
       <br />
       {flagIcons}
+      <br />
+      {filterIcons}
     </div>
   )
 }

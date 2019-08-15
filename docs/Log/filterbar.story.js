@@ -56,11 +56,14 @@ class ExampleCustom extends React.Component {
     return (
       <FilterBar
         timePeriod={this.state.timeRange}
-        // selectedTimePeriod={this.state.selectedTimePeriod}
+        selectedTimePeriod={this.state.selectedTimePeriod}
         timePeriodOpts={['30 Mins', '1 Hour', '6 Hours']}
         defaultTimePeriod="6 Hours"
         enableSimplifiedMode={true}
         enableTimeRepeat={true}
+        enableDatePickerMode={true}
+        isTimePeriodOptsEnabled={true}
+        isOpenCustomTimeSelector={true}
         rangeBarOptions={{
           value: this.state.selectValue,
           size: 30,
@@ -69,6 +72,7 @@ class ExampleCustom extends React.Component {
           onChangeTimeRepeat: this.onChangeTimeRepeat,
         }}
         onChangeTimeRange={this.onChangeTimeRange}
+        enableCustomRange={false}
       />
     )
   }

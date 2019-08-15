@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 // import { action } from '@storybook/addon-actions'
 // import { linkTo } from '@storybook/addon-links'
 // import { withReadme, withDocs } from 'storybook-readme'
-const version = 'v1.0.6'
+const version = 'v1.7.0'
 
 import '../src/index.less'
 import './index.less'
@@ -33,12 +33,15 @@ import createConfigProviderStory from './ConfigProvider/index.story'
 import createContextMenuStory from './ContextMenu'
 import createDatatableStory from './Datatable/index.story'
 import createDatePickerStory from './DatePicker'
+import createDescriptionsStory from './Descriptions'
 import createDiffStory from './Diff/index.story'
 import createDividerStory from './Divider/index.story'
 import createDrawerStory from './Drawer/index.story'
 import createDropdownStory from './Dropdown'
 import createDropdownMenuStory from './DropdownMenu/index.story'
+import createErrorPageStory from './ErrorPage/index.story'
 import createExplorerStory from './Explorer'
+import createFilterTreeStory from './FilterTree/index.story'
 import createFormStory from './Form'
 import createGridStory from './Grid/index.story'
 import createIconStory from './Icon'
@@ -48,11 +51,14 @@ import createLayoutStory from './Layout'
 import createListStory from './List/index.story'
 import createListInputStory from './ListInput/index.story'
 import createMentionStory from './Mention'
+import createMentionsStory from './Mentions'
 import createMenuStory from './Menu/index.stories'
 import createMenuPopoverStory from './MenuPopover/index.story'
 import createMessageStory from './Message/index.story'
+import createMultiGroupSelectStory from './MultiGroupSelect/index.story'
 import createMultiSearchStory from './MultiSearch/index.story'
 import createNotificationStory from './Notification/index.story'
+import createPageHeaderStory from './PageHeader'
 import createPaginationStory from './Pagination/index.story'
 import createPopconfirmStory from './Popconfirm/index.story'
 import createPopoverStory from './Popover/index.story'
@@ -77,6 +83,7 @@ import createTreeStory from './Tree/index.story'
 import createTreeSelectStory from './TreeSelect'
 import createTooltipStory from './Tooltip/index.story'
 import createTransferStory from './Transfer/index.story'
+import createTypographyStory from './Typography'
 import createUploadStory from './Upload/index.story'
 import createModalStory from './Modal/index.story'
 import createLocaleProviderStory from './LocaleProvider/index.story'
@@ -95,6 +102,7 @@ createSummaryStory(widgetStory)
 const generalWidgets = storiesOf(`A10 Widgets (${version})/General`, module)
 createButtonStory(generalWidgets)
 createIconStory(generalWidgets)
+createTypographyStory(generalWidgets)
 
 const layoutWidgets = storiesOf(`A10 Widgets (${version})/Layout`, module)
 createGridStory(layoutWidgets)
@@ -111,6 +119,7 @@ createDropdownMenuStory(navigationWidgets)
 createExplorerStory(navigationWidgets)
 createMenuStory(navigationWidgets)
 createMenuPopoverStory(navigationWidgets)
+createPageHeaderStory(navigationWidgets)
 createPaginationStory(navigationWidgets)
 createStepsStory(navigationWidgets)
 
@@ -125,11 +134,14 @@ createCompoundConfigList(dataEntryWidgets)
 createCompoundTable(dataEntryWidgets)
 createConfigListStory(dataEntryWidgets)
 createDatePickerStory(dataEntryWidgets)
+createFilterTreeStory(dataEntryWidgets)
 createFormStory(dataEntryWidgets)
 createInputNumberStory(dataEntryWidgets)
 createInputStory(dataEntryWidgets)
 createListInputStory(dataEntryWidgets)
 createMentionStory(dataEntryWidgets)
+createMentionsStory(dataEntryWidgets)
+createMultiGroupSelectStory(dataEntryWidgets)
 createRateStory(dataEntryWidgets)
 createRadioStory(dataEntryWidgets)
 createSwitchStory(dataEntryWidgets)
@@ -154,6 +166,7 @@ createCommentStory(dataDisplayWidgets)
 createContextMenuStory(dataDisplayWidgets)
 createCollapseStory(dataDisplayWidgets)
 createDatatableStory(dataDisplayWidgets)
+createDescriptionsStory(dataDisplayWidgets)
 createDiffStory(dataDisplayWidgets)
 createDNDTableStory(dataDisplayWidgets)
 createDNDBasicStory(dataDisplayWidgets)
@@ -189,4 +202,5 @@ createAnchorStory(otherWidget)
 createBackTopStory(otherWidget)
 createConfigProviderStory(otherWidget)
 createDividerStory(otherWidget)
+createErrorPageStory(otherWidget)
 createLocaleProviderStory(otherWidget)

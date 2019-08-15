@@ -2,16 +2,16 @@
 @import '~antd/lib/button/style/index.less';
 
 .@{btn-prefix-cls} {
+  // margin-right: 8px;
+  // margin-bottom: 12px;
+
+  &-group {
     margin-right: 8px;
     margin-bottom: 12px;
 
-    &-group {
-        margin-right: 8px;
-        margin-bottom: 12px;
-        
-        .@{btn-prefix-cls}{
-            margin-right: 0px;
-            margin-bottom: 0px;
-        }
+    .@{btn-prefix-cls} {
+      margin-right: 0px;
+      margin-bottom: 0px;
     }
+  }
 }

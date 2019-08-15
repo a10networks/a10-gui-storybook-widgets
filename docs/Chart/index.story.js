@@ -4,13 +4,17 @@ import { CodeComponent, CodeCard, Code } from '../utils'
 
 import * as readme from '../../src/Chart/README.md'
 
-import A10ChartDemo from './demo/A10ChartDemo'
-import ControlChartDemo from './demo/ControlChartDemo'
-import LineChartDemo from './demo/LineChartDemo'
-import SimpleHeaderChartDemo from './demo/SimpleHeaderChartDemo'
-import SummaryChartDemo1 from './demo/SummaryChartDemo1'
-import SummaryChartDemo2 from './demo/SummaryChartDemo2'
-import MapDemo from './demo/MapDemo'
+import {
+  A10ChartDemo,
+  ControlChartDemo,
+  LineChartDemo,
+  SimpleHeaderChartDemo,
+  SummaryChartDemo1,
+  SummaryChartDemo2,
+  MapDemo,
+  PieDemo,
+} from './demo'
+
 import './demo/index.less'
 
 import {
@@ -21,6 +25,7 @@ import {
   summaryChartCircleCode,
   summaryChartHalfCode,
   mapChartCode,
+  A10ChartPieCode,
 } from './demo/code'
 
 const Example = () => {
@@ -33,6 +38,13 @@ const Example = () => {
           code={<Code string={controlChartDemoCode} />}
         >
           <ControlChartDemo />
+        </CodeCard>
+        <CodeCard
+          title="Pie Chart"
+          desc="Pie chart."
+          code={<Code string={A10ChartPieCode} />}
+        >
+          <PieDemo />
         </CodeCard>
         <CodeCard
           title="A10Chart"

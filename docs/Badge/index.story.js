@@ -1,4 +1,3 @@
-
 import * as React from 'react'
 import { withReadme } from 'storybook-readme'
 import { storiesOf } from '@storybook/react'
@@ -14,7 +13,18 @@ import StatusDemo from './demo/StatusDemo'
 import StandaloneDemo from './demo/StandaloneDemo'
 import RedBadgeDemo from './demo/RedDemo'
 import TitleDemo from './demo/TitleDemo'
-import { basicString, overflowString, clickableString, statusString, standaloneString, linkString, dynamicCode, titleCode } from './demo/codes'
+import ColorDemo from './demo/ColorDemo'
+import {
+  colorCode,
+  basicString,
+  overflowString,
+  clickableString,
+  statusString,
+  standaloneString,
+  linkString,
+  dynamicCode,
+  titleCode,
+} from './demo/codes'
 import './demo/index.less'
 
 const Example = () => (
@@ -82,6 +92,13 @@ const Example = () => (
         code={<Code string={titleCode} />}
       >
         <TitleDemo />
+      </CodeCard>
+      <CodeCard
+        title="Colorful Badge"
+        desc="New feature after 3.16.0. We preset a series of colorful Badge styles for use in different situations. You can also set it to a hex color string for custom color."
+        code={<Code string={colorCode} />}
+      >
+        <ColorDemo />
       </CodeCard>
     </CodeComponent>
   </div>

@@ -1,26 +1,37 @@
 import * as React from 'react'
-import { A10Table, A10Badge, A10Menu, A10Dropdown, A10Icon } from '../../../src/'
+import {
+  A10Table,
+  A10Badge,
+  A10Menu,
+  A10Dropdown,
+  A10Icon,
+} from '../../../src/'
 import { CodeComponent, CodeCard, Code } from '../../utils'
-import "../index.less"
+import '../index.less'
 const demoCode = require('./code.txt')
 
 const menu = (
   <A10Menu>
-    <A10Menu.Item>
-      Action 1
-    </A10Menu.Item>
-    <A10Menu.Item>
-      Action 2
-    </A10Menu.Item>
+    <A10Menu.Item>Action 1</A10Menu.Item>
+    <A10Menu.Item>Action 2</A10Menu.Item>
   </A10Menu>
-);
+)
 
 function NestedTable() {
   const expandedRowRender = () => {
     const columns = [
       { title: 'Date', dataIndex: 'date', key: 'date' },
       { title: 'Name', dataIndex: 'name', key: 'name' },
-      { title: 'Status', key: 'state', render: () => <span><A10Badge status="success" />Finished</span> },
+      {
+        title: 'Status',
+        key: 'state',
+        render: () => (
+          <span>
+            <A10Badge status="success" />
+            Finished
+          </span>
+        ),
+      },
       { title: 'Upgrade Status', dataIndex: 'upgradeNum', key: 'upgradeNum' },
       {
         title: 'Action',
@@ -38,25 +49,19 @@ function NestedTable() {
           </span>
         ),
       },
-    ];
+    ]
 
-    const data = [];
+    const data = []
     for (let i = 0; i < 3; ++i) {
       data.push({
         key: i,
         date: '2014-12-24 23:12:00',
         name: 'This is production name',
         upgradeNum: 'Upgraded: 56',
-      });
+      })
     }
-    return (
-      <A10Table
-        columns={columns}
-        dataSource={data}
-        pagination={false}
-      />
-    );
-  };
+    return <A10Table columns={columns} dataSource={data} pagination={false} />
+  }
 
   const columns = [
     { title: 'Name', dataIndex: 'name', key: 'name' },
@@ -65,10 +70,14 @@ function NestedTable() {
     { title: 'Upgraded', dataIndex: 'upgradeNum', key: 'upgradeNum' },
     { title: 'Creator', dataIndex: 'creator', key: 'creator' },
     { title: 'Date', dataIndex: 'createdAt', key: 'createdAt' },
-    { title: 'Action', key: 'operation', render: () => <a href="javascript:;">Publish</a> },
-  ];
+    {
+      title: 'Action',
+      key: 'operation',
+      render: () => <a href="javascript:;">Publish</a>,
+    },
+  ]
 
-  const data = [];
+  const data = []
   for (let i = 0; i < 3; ++i) {
     data.push({
       key: i,
@@ -78,7 +87,7 @@ function NestedTable() {
       upgradeNum: 500,
       creator: 'Jack',
       createdAt: '2014-12-24 23:12:00',
-    });
+    })
   }
 
   return (
@@ -88,9 +97,8 @@ function NestedTable() {
       expandedRowRender={expandedRowRender}
       dataSource={data}
     />
-  );
+  )
 }
-
 
 class Demo extends React.Component {
   render() {

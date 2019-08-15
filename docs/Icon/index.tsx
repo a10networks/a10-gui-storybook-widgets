@@ -21,16 +21,17 @@ const Example = () => (
       code={
         <Code
           string={
-            '<A10Icon type="link" title="link" style={{ fontSize: \'40px\', width: \'20px\' }}/>'
+            '<A10Icon type="link" title="link"   style={{  fontSize: 40, , stroke: \'#383838\' }}'
           }
         />
       }
     >
       <div className="IconDemoSpecific">
         <A10Icon
-          type="link"
+          type="dashboard"
+          app="harmony-controller"
           title="link"
-          style={{ fontSize: '40px', width: '20px' }}
+          style={{ width: 40, height: 40, stroke: 'pink' }}
         />
       </div>
     </CodeCard>

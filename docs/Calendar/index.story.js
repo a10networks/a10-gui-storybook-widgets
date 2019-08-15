@@ -1,14 +1,17 @@
-
 import * as React from 'react'
 
 import { A10Calendar } from '../../src'
-import './demo/index.less'
 import BasicCalendarExample from './demo/BasicCalendar'
 import NoticeCalendarExample from './demo/NoticeCalendar'
 import CardCalendarExample from './demo/CardCalendar'
 import SelectableExample from './demo/SelectableCalendar'
 
-import { basicCalendarCode, noticeCalendarCode, cardCalendarCode, selectableCalendarCode } from './demo/code'
+import {
+  basicCalendarCode,
+  noticeCalendarCode,
+  cardCalendarCode,
+  selectableCalendarCode,
+} from './demo/code'
 
 import { withReadme } from 'storybook-readme'
 import { Code, CodeComponent, CodeCard } from '../utils'
@@ -16,7 +19,7 @@ const A10CalendarReadme = require('../../src/Calendar/README.md')
 
 const Example = () => {
   return (
-    <div id="calendarSpecific">
+    <div>
       <CodeComponent>
         <CodeCard
           title="Basic Calendar"

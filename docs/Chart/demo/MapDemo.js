@@ -25,14 +25,22 @@ const defaultData = {
     'map': {
         type: 'map',
         config: {
+
             series: [{
               name: 'Geo-Locations',
               data: [
-                { code: 'us', value: 100 },
-                { code: 'in', value: 200 },
-                { code: 'cn', value: 300 },
+                { code: 'us', value: 100, color: 'pink' },
+                { code: 'in', value: 200 , color: 'skyblue' },
+                { code: 'cn', value: 300 , color: 'purple'},
               ]
             }]
+            title: {
+                text: 'Chart with a background color',
+                style: {
+                    color: 'white'
+                }
+            },
+
         },
         counters: {},
     },
@@ -54,7 +62,6 @@ export default class Example extends React.Component {
     }
 
     render() {
-
         const onClickMenu = (options) => {
             const type = options.type
             this.setState(defaultData[type])
@@ -66,14 +73,13 @@ export default class Example extends React.Component {
                 })
             }
         }
-
         return (
             <div>
                 <A10Chart.Detail
                     types={['map', 'detail']}
                     settings={settingsContent}
                     onClickMenu={onClickMenu}
-                    title="WORLD MAP"
+                    title="WORLD MAP test"
                     chartConfig={this.state.config}
                     counters={this.state.counters}
                     type={this.state.type}

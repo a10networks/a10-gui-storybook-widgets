@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { A10Calendar, A10Badge } from '../../../src'
-import './index.less'
+
 class Example extends React.Component {
   getListData = value => {
     let listData

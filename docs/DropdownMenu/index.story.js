@@ -5,7 +5,7 @@ import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react'
 import { Icon } from 'antd'
 
 import { Code, CodeComponent, CodeCard } from '../utils'
-import { A10DropdownMenu } from '../../src'
+import { A10DropdownMenu, A10Divider } from '../../src'
 import * as readme from '../../src/DropdownMenu/README.md'
 
 const code = `import { A10DropdownMenu } from 'a10-gui-widgets'
@@ -14,6 +14,7 @@ const Example = () => {
   const menu = [
     <div name="duplicate">Duplicate</div>,
     <div name="add">Add</div>,
+    <hr />,
     <div name="delete">Delete</div>,
     <div name="share">Share</div>,
   ]
@@ -28,6 +29,7 @@ export const Example = () => {
   const menu = [
     <div name="duplicate">Duplicate</div>,
     <div name="add">Add</div>,
+    <hr />,
     <div name="delete">Delete</div>,
     <div name="share">Share</div>,
   ]

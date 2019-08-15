@@ -14,7 +14,6 @@ const columns = [
     render: () => <a href="#">Delete</a>,
   },
 ]
-
 const data = [
   {
     key: 1,
@@ -29,8 +28,12 @@ const data = [
     name: 'Jim Green',
     age: 42,
     address: 'London No. 1 Lake Park',
-    description:
-      'My name is Jim Green, I am 42 years old, living in London No. 1 Lake Park.',
+    description: (
+      <p style={{ height: 200 }}>
+        'My name is Jim Green, I am 42 years old, living in London No. 1 Lake
+        Park.'
+      </p>
+    ),
   },
   {
     key: 3,
@@ -52,10 +55,11 @@ class Demo extends React.Component {
       >
         <A10Table
           columns={columns}
+          dataSource={data}
+          size="small"
           expandedRowRender={record => (
             <p style={{ margin: 0 }}>{record.description}</p>
           )}
-          dataSource={data}
         />
       </CodeCard>
     )

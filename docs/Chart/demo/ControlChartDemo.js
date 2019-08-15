@@ -78,15 +78,12 @@ export default class Example extends React.Component {
 
   render() {
     const showFilter = () => {
-      console.log(this.state)
       this.setState({ disableFilter: !this.state.disableFilter })
     }
 
     const onClickMenu = options => {
-      console.log(options)
       const type = options.type
       this.setState(defaultData[type])
-
       if (this.state.groups.length === options.groups.length) {
         this.state.groups.map((group, index) => {
           groups[index].map(tab => {
@@ -97,9 +94,19 @@ export default class Example extends React.Component {
     }
 
     return (
-      <div>
+      <div style={{ width: '100%' }}>
         <A10Chart.Detail
-          types={['scatter', 'area', 'groupColumn', 'column', 'pie', 'detail']}
+          types={[
+            'scatter',
+            'area',
+            'groupColumn',
+            'column',
+            'pie',
+            'detail',
+            'semi_donut',
+            'donut',
+            'treemap',
+          ]}
           settings={settingsContent}
           groups={groups}
           onClickMenu={onClickMenu}
@@ -110,6 +117,10 @@ export default class Example extends React.Component {
           counters={this.state.counters}
           type={this.state.type}
           disableFilter={this.state.disableFilter}
+          showTitle={true}
+          showSettingIcon={false}
+          showChartIcons={false}
+          showChartHeaderMenu={true}
         />
 
         <div style={{ marginTop: '10px' }}>
@@ -117,6 +128,7 @@ export default class Example extends React.Component {
             {this.state.disableFilter ? 'Show Filters' : 'Hide Filters'}
           </A10Button>
         </div>
+        <div>
       </div>
     )
   }

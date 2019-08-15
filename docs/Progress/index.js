@@ -34,7 +34,8 @@ const Demo1 = () => {
   return (
     <div>
       <A10Progress type="circle" percent={75} />
-      <A10Progress type="circle" percent={70} status="exception" />
+      &nbsp;
+      <A10Progress type="circle" percent={70} status="exception" /> &nbsp;
       <A10Progress type="circle" percent={100} />
     </div>
   )
@@ -43,10 +44,10 @@ const Demo1 = () => {
 export const Demo2 = () => {
   return (
     <div style={{ width: 170 }}>
-      <A10Progress percent={30} size="small" />
-      <A10Progress percent={50} size="small" status="active" />
-      <A10Progress percent={70} size="small" status="exception" />
-      <A10Progress percent={100} size="small" />
+      <A10Progress percent={30} size="small" /> &nbsp;
+      <A10Progress percent={50} size="small" status="active" /> &nbsp;
+      <A10Progress percent={70} size="small" status="exception" /> &nbsp;
+      <A10Progress percent={100} size="small" /> &nbsp;
     </div>
   )
 }
@@ -54,9 +55,10 @@ export const Demo2 = () => {
 const Demo3 = () => {
   return (
     <div>
-      <A10Progress type="circle" percent={30} width={80} />
+      <A10Progress type="circle" percent={30} width={80} /> &nbsp;
       <A10Progress type="circle" percent={70} width={80} status="exception" />
-      <A10Progress type="circle" percent={100} width={80} />
+      &nbsp;
+      <A10Progress type="circle" percent={100} width={80} /> &nbsp;
     </div>
   )
 }
@@ -88,7 +90,7 @@ const Demo4 = () => {
     render() {
       return (
         <div>
-          <A10Progress type="circle" percent={this.state.percent} />
+          <A10Progress type="circle" percent={this.state.percent} /> &nbsp;
           <A10Button onClick={this.decline} icon="minus" />
           <A10Button onClick={this.increase} icon="plus" />
         </div>
@@ -143,6 +145,7 @@ const Demo6 = () => {
         percent={75}
         format={percent => `${percent} Days`}
       />
+      &nbsp;
       <A10Progress type="circle" percent={100} format={() => 'Done'} />
     </div>
   )
@@ -164,7 +167,7 @@ const Demo9 = () => {
   return (
     <div>
       <A10Progress strokeLinecap="square" percent={75} />
-      <A10Progress strokeLinecap="square" type="circle" percent={75} />
+      <A10Progress strokeLinecap="square" type="circle" percent={75} /> &nbsp;
       <A10Progress strokeLinecap="square" type="dashboard" percent={75} />
     </div>
   )

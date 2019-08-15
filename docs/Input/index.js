@@ -25,7 +25,7 @@ import {
   searchBox,
   prefixSuffix,
   textArea,
-  formatTooltipInput
+  formatTooltipInput,
 } from './demo/code'
 
 const Demo1 = () => {
@@ -151,7 +151,7 @@ const Demo4 = () => {
               <Option value="Jiangsu">Jiangsu</Option>
             </A10Select>
             <A10Input
-              style={{ width: '50%' }}
+              style={{ width: '50%', right: 1 }}
               defaultValue="Xihu District, Hangzhou"
             />
           </InputGroup>
@@ -159,11 +159,15 @@ const Demo4 = () => {
           <InputGroup compact>
             <A10Select defaultValue="Option1-1">
               <Option value="Option1-1">Option1-1</Option>
-              <Option value="Option1-2">Option1-2</Option>
+              <Option style={{ right: 1 }} value="Option1-2">
+                Option1-2
+              </Option>
             </A10Select>
             <A10Select defaultValue="Option2-2">
               <Option value="Option2-1">Option2-1</Option>
-              <Option value="Option2-2">Option2-2</Option>
+              <Option style={{ right: 1 }} value="Option2-2">
+                Option2-2
+              </Option>
             </A10Select>
           </InputGroup>
           <br />
@@ -178,7 +182,7 @@ const Demo4 = () => {
             />
             <A10Input
               style={{
-                width: 24,
+                width: 36,
                 borderLeft: 0,
                 pointerEvents: 'none',
                 backgroundColor: '#fff',
@@ -192,30 +196,34 @@ const Demo4 = () => {
             />
           </InputGroup>
           <br />
-          {<InputGroup compact>
-            <A10Select defaultValue="Sign Up">
-              <Option value="Sign Up">Sign Up</Option>
-              <Option value="Sign In">Sign In</Option>
-            </A10Select>
-            <AutoComplete
-              dataSource={this.state.dataSource}
-              style={{ width: 200 }}
-              onChange={this.handleChange}
-              placeholder="Email"
-            />
-          </InputGroup>}
+          {
+            <InputGroup compact>
+              <A10Select defaultValue="Sign Up">
+                <Option value="Sign Up">Sign Up</Option>
+                <Option value="Sign In">Sign In</Option>
+              </A10Select>
+              <AutoComplete
+                dataSource={this.state.dataSource}
+                style={{ width: 200 }}
+                onChange={this.handleChange}
+                placeholder="Email"
+              />
+            </InputGroup>
+          }
           <br />
-          {<InputGroup compact>
-            <A10Select style={{ width: '30%' }} defaultValue="Home">
-              <Option value="Home">Home</Option>
-              <Option value="Company">Company</Option>
-            </A10Select>
-            <Cascader
-              style={{ width: '41%' }}
-              options={options}
-              placeholder="Select Address"
-            />
-          </InputGroup>}
+          {
+            <InputGroup compact>
+              <A10Select style={{ width: '30%' }} defaultValue="Home">
+                <Option value="Home">Home</Option>
+                <Option value="Company">Company</Option>
+              </A10Select>
+              <Cascader
+                style={{ width: '41%' }}
+                options={options}
+                placeholder="Select Address"
+              />
+            </InputGroup>
+          }
         </div>
       )
     }
@@ -233,7 +241,7 @@ const Demo5 = () => {
 }
 
 const Demo6 = () => {
-  const Search = A10Input.Search;
+  const Search = A10Input.Search
   class CompactDemo6 extends React.Component {
     render() {
       return (
@@ -243,13 +251,15 @@ const Demo6 = () => {
             onSearch={value => console.log(value)}
             style={{ width: 200 }}
           />
-          <br /><br />
+          <br />
+          <br />
           <Search
             placeholder="input search text"
             onSearch={value => console.log(value)}
             enterButton
           />
-          <br /><br />
+          <br />
+          <br />
           <div id="SearchSpecific">
             <Search
               placeholder="input search text"
@@ -268,24 +278,26 @@ const Demo6 = () => {
 const Demo7 = () => {
   class App extends React.Component {
     constructor(props) {
-      super(props);
+      super(props)
       this.state = {
         userName: '',
-      };
+      }
     }
 
     emitEmpty = () => {
-      this.userNameInput.focus();
-      this.setState({ userName: '' });
+      this.userNameInput.focus()
+      this.setState({ userName: '' })
     }
 
-    onChangeUserName = (e) => {
-      this.setState({ userName: e.target.value });
+    onChangeUserName = e => {
+      this.setState({ userName: e.target.value })
     }
 
     render() {
-      const { userName } = this.state;
-      const suffix = userName ? <A10Icon type="close-circle" onClick={this.emitEmpty} /> : null;
+      const { userName } = this.state
+      const suffix = userName ? (
+        <A10Icon type="close-circle" onClick={this.emitEmpty} />
+      ) : null
       return (
         <A10Input
           placeholder="Enter your username"
@@ -293,21 +305,19 @@ const Demo7 = () => {
           suffix={suffix}
           value={userName}
           onChange={this.onChangeUserName}
-          ref={node => this.userNameInput = node}
+          ref={node => (this.userNameInput = node)}
         />
-      );
+      )
     }
   }
   return <App />
 }
 
 const Demo8 = () => {
-  const { TextArea } = A10Input;
+  const { TextArea } = A10Input
   class CompactDemo8 extends React.Component {
     render() {
-      return (
-        <TextArea rows={4} />
-      )
+      return <TextArea rows={4} />
     }
   }
   return <CompactDemo8 />
@@ -315,48 +325,54 @@ const Demo8 = () => {
 
 const Demo9 = () => {
   function formatNumber(value) {
-    value += '';
-    const list = value.split('.');
-    const prefix = list[0].charAt(0) === '-' ? '-' : '';
-    let num = prefix ? list[0].slice(1) : list[0];
-    let result = '';
+    value += ''
+    const list = value.split('.')
+    const prefix = list[0].charAt(0) === '-' ? '-' : ''
+    let num = prefix ? list[0].slice(1) : list[0]
+    let result = ''
     while (num.length > 3) {
-      result = `,${num.slice(-3)}${result}`;
-      num = num.slice(0, num.length - 3);
+      result = `,${num.slice(-3)}${result}`
+      num = num.slice(0, num.length - 3)
     }
     if (num) {
-      result = num + result;
+      result = num + result
     }
-    return `${prefix}${result}${list[1] ? `.${list[1]}` : ''}`;
+    return `${prefix}${result}${list[1] ? `.${list[1]}` : ''}`
   }
 
   class NumericInput extends React.Component {
-    onChange = (e) => {
-      const { value } = e.target;
-      const reg = /^-?(0|[1-9][0-9]*)(\.[0-9]*)?$/;
-      if ((!Number.isNaN(value) && reg.test(value)) || value === '' || value === '-') {
-        this.props.onChange(value);
+    onChange = e => {
+      const { value } = e.target
+      const reg = /^-?(0|[1-9][0-9]*)(\.[0-9]*)?$/
+      if (
+        (!Number.isNaN(value) && reg.test(value)) ||
+        value === '' ||
+        value === '-'
+      ) {
+        this.props.onChange(value)
       }
     }
 
     // '.' at the end or only '-' in the input box.
     onBlur = () => {
-      const { value, onBlur, onChange } = this.props;
+      const { value, onBlur, onChange } = this.props
       if (value.charAt(value.length - 1) === '.' || value === '-') {
-        onChange({ value: value.slice(0, -1) });
+        onChange({ value: value.slice(0, -1) })
       }
       if (onBlur) {
-        onBlur();
+        onBlur()
       }
     }
 
     render() {
-      const { value } = this.props;
+      const { value } = this.props
       const title = value ? (
         <span className="numeric-input-title">
           {value !== '-' ? formatNumber(value) : '-'}
         </span>
-      ) : 'Input a number';
+      ) : (
+        'Input a number'
+      )
       return (
         <A10Tooltip
           trigger={['focus']}
@@ -373,22 +389,28 @@ const Demo9 = () => {
             style={{ width: '134px' }}
           />
         </A10Tooltip>
-      );
+      )
     }
   }
 
   class NumericInputDemo extends React.Component {
     constructor(props) {
-      super(props);
-      this.state = { value: '' };
+      super(props)
+      this.state = { value: '' }
     }
 
-    onChange = (value) => {
-      this.setState({ value });
+    onChange = value => {
+      this.setState({ value })
     }
 
     render() {
-      return <NumericInput style={{ width: 120 }} value={this.state.value} onChange={this.onChange} />;
+      return (
+        <NumericInput
+          style={{ width: 120 }}
+          value={this.state.value}
+          onChange={this.onChange}
+        />
+      )
     }
   }
   return <NumericInputDemo />

@@ -2,7 +2,7 @@ import * as React from 'react'
 import { A10Component } from 'a10-gui-framework'
 import { A10Chart } from '../../../src'
 
-export class MyComponent extends A10Component {
+export default class MyComponent extends A10Component {
   render() {
     const config = {
       chart: {
@@ -49,11 +49,10 @@ export class MyComponent extends A10Component {
             '#61fadd',
             '#ffe27b',
             '#3366cc',
-          ]
+          ],
         },
       ],
     }
     return <A10Chart config={config} ref="chart" />
   }
 }
-export default MyComponent

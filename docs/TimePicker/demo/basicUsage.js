@@ -1,7 +1,6 @@
 import * as React from 'react'
-import { A10TimePicker, A10Icon } from '../../../src';
-import * as moment from 'moment';
-import ComboIcons from './SuffixIcon'
+import { A10TimePicker, A10Icon } from '../../../src'
+import * as moment from 'moment'
 
 export const demoString = `
 import { A10TimePicker } from 'a10-gui-widgets'
@@ -24,13 +23,12 @@ class Demo extends React.Component {
 ReactDOM.render(<Demo />, mountNode);
 `
 function onChange(time, timeString) {
-  console.log(time, timeString);
+  console.log(time, timeString)
 }
 
 export const BasicUsageDemo = () => {
   return (
     <A10TimePicker
-      suffixIcon={<ComboIcons size="large" />}
       onChange={onChange}
       defaultOpenValue={moment('00:00:00', 'HH:mm:ss')}
     />
