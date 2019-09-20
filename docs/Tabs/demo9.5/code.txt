@@ -1,0 +1,27 @@
+
+import { A10Tabs } from 'a10-gui-widgets';
+
+const TabPane = A10Tabs.TabPane;
+
+ReactDOM.render(
+  <div className="card-container">
+    <A10Tabs type="card">
+      <TabPane tab="A10Tabs Title 1" key="1">
+        <p>Content of A10Tabs Pane 1</p>
+        <p>Content of A10Tabs Pane 1</p>
+        <p>Content of A10Tabs Pane 1</p>
+      </TabPane>
+      <TabPane tab="A10Tabs Title 2" key="2">
+        <p>Content of A10Tabs Pane 2</p>
+        <p>Content of A10Tabs Pane 2</p>
+        <p>Content of A10Tabs Pane 2</p>
+      </TabPane>
+      <TabPane tab="A10Tabs Title 3" key="3">
+        <p>Content of A10Tabs Pane 3</p>
+        <p>Content of A10Tabs Pane 3</p>
+        <p>Content of A10Tabs Pane 3</p>
+      </TabPane>
+    </A10Tabs>
+  </div>,
+  mountNode
+);

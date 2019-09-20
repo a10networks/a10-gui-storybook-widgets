@@ -1,0 +1,29 @@
+import * as React from 'react'
+import { A10WidgetLocaleProvider, A10Table } from 'a10-gui-widgets'
+const DEMO = () => {
+  const columns = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      render: text => <a href="#">{text}</a>,
+    },
+    {
+      title: 'Age',
+      dataIndex: 'age',
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address',
+    },
+  ]
+  const data = []
+  return (
+    <A10WidgetLocaleProvider locale={A10WidgetLocaleProvider.locales['zh-cn']}>
+      <A10Table
+        columns={columns}
+        dataSource={data}
+      />
+    </A10WidgetLocaleProvider>
+  )
+}
+ReactDOM.reander(<DEMO />)

@@ -1,0 +1,32 @@
+import { A10Layout, A10Menu, A10Breadcrumb } from 'a10-gui-widgets'
+const { Header, Content, Footer } = A10Layout
+
+ReactDOM.render(
+  <A10Layout className="layout">
+    <Header>
+      <div className="logo" />
+      <A10Menu
+        theme="dark"
+        mode="horizontal"
+        defaultSelectedKeys={['2']}
+        style={{ lineHeight: '64px' }}
+      >
+        <A10Menu.Item key="1">nav 1</A10Menu.Item>
+        <A10Menu.Item key="2">nav 2</A10Menu.Item>
+        <A10Menu.Item key="3">nav 3</A10Menu.Item>
+      </A10Menu>
+    </Header>
+    <Content style={{ padding: '0 50px' }}>
+      <A10Breadcrumb style={{ margin: '16px 0' }}>
+        <A10Breadcrumb.Item>Home</A10Breadcrumb.Item>
+        <A10Breadcrumb.Item>List</A10Breadcrumb.Item>
+        <A10Breadcrumb.Item>App</A10Breadcrumb.Item>
+      </A10Breadcrumb>
+      <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
+        Content
+      </div>
+    </Content>
+    <Footer style={{ textAlign: 'center' }}>Footer</Footer>
+  </A10Layout>,
+  mountNode,
+)
