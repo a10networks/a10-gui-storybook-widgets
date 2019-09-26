@@ -72,8 +72,8 @@ class ExampleCustom extends React.Component {
         ]}
         defaultTimePeriod={'allTime'}
         enableSimplifiedMode={true}
-        enableTimeRepeat={true}
-        showTimeRepeat={false}
+        enableTimeRepeat={false}
+        showTimeRepeat={true}
         isOpenCustomTimeSelector={true}
         rangeBarOptions={{
           size: 30,
