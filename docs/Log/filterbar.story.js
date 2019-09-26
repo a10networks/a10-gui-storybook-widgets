@@ -8,9 +8,7 @@ const A10FilterBar = require('../../src/Log/FilterBar/README.md')
 
 class ExampleCustom extends React.Component {
   loadInterval
-  timeRangeForAllTime = [
-    moment().subtract(1, 'hours'), moment()
-  ]
+  timeRangeForAllTime = [moment().subtract(1, 'hours'), moment()]
   state = {
     disable: true,
     timePeriodType: 7,
@@ -43,9 +41,7 @@ class ExampleCustom extends React.Component {
 
   onChangeTimeRange = (periods, lockTimePeriod, type, typeName) => {
     console.log(periods, lockTimePeriod, type, typeName)
-    if (
-      periods[1].format('X') !== lockTimePeriod[1].format('X')
-    ) {
+    if (periods[1].format('X') !== lockTimePeriod[1].format('X')) {
       this.setState({ disable: true })
       clearInterval(this.loadInterval)
     } else {
@@ -77,6 +73,7 @@ class ExampleCustom extends React.Component {
         defaultTimePeriod={'allTime'}
         enableSimplifiedMode={true}
         enableTimeRepeat={true}
+        showTimeRepeat={false}
         isOpenCustomTimeSelector={true}
         rangeBarOptions={{
           size: 30,
